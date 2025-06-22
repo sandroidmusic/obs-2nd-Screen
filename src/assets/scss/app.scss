@@ -1,0 +1,81 @@
+/* -------------------------------
+  Imports
+------------------------------- */
+@use 'reset';
+@use 'fonts';
+@use 'query';
+@use 'variables';
+
+/* -------------------------------
+  Globals / Body
+------------------------------- */
+html {
+  position: relative;
+  font-size: 62.5%;
+  padding: 0;
+  margin: 0;
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 1.4rem;
+  @include fonts.roboto;
+  color: var(--color-text-primary);
+  background: var(--color-bg-primary, transparent);
+
+  &.obs {
+    background: transparent;
+  }
+}
+
+h3,
+p {
+  margin: 0;
+}
+
+button.btn {
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+
+  &.outline {
+    border: 1px solid var(--color-accent);
+    border-radius: 4px;
+    background: rgb(0 0 0 / 30%);
+    color: var(--color-accent);
+    padding: 4px 8px;
+    min-height: 28px;
+    min-width: calc(var(--baseunit) * 12);
+    text-transform: uppercase;
+
+    &.dark {
+      background: rgb(0 0 0 / 75%);
+    }
+
+    &:hover,
+    &:focus-within {
+      background: var(--color-accent);
+      color: var(--color-bg-primary);
+    }
+  }
+  &.primary {
+    border: 1px solid var(--color-bg-primary);
+    border-radius: 4px;
+    background: var(--color-accent);
+    color: var(--color-bg-primary);
+    padding: 4px 8px;
+    min-width: calc(var(--baseunit) * 12);
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus-within {
+      border: 1px solid var(--color-accent);
+      background: color-mix(in srgb, var(--color-accent), white 30%);
+      color: var(--color-bg-primary);
+    }
+  }
+
+  &.fit {
+    min-width: auto;
+  }
+}
