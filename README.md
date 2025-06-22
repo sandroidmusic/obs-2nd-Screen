@@ -15,7 +15,7 @@ Optimized for Tablets / Mobile but can also be used on your computer of course.
 
 
 
-**Note:** Twitch Chat and Youtube Superstickers/Superchats are currently not supported.
+ℹ️ Twitch Chat and Youtube Superstickers/Superchats are currently not supported.
 
 
 
@@ -68,34 +68,36 @@ Actions are defined as a Array of Objects [JSON structure](https://developer.moz
   {
     "type": "Components.ToggleButton",
     "action": "Actions.SceneChange",
+    "value": "{Name of Scene in OBS}"
     "radiogroup": "scenes",
-    "image": "[A valid URL or Base64 String]",
+    "image": "{A valid URL or Base64 String}",
     "color": "#0078ff",
     "label": "My Scene",
-    "value": "Name of Scene in OBS"
+    
   },
   {
     "type": "Components.ToggleButton",
     "action": "Actions.AudioToggleMute",
-    "image": "[A valid URL or Base64 String]",
+    "value": "{Name of the Audio Input Source in OBS}"
+    "image": "{A valid URL or Base64 String}",
     "color": "#0078ff",
     "label": "My Microphone",
-    "value": "Microphone1"
+    
   },
 ]
 ```
 
 A single Action or Button includes the following properties:
 
-| Property             | Description                                                  |
-| -------------------- | ------------------------------------------------------------ |
-| `type`               | A valid [UI component](https://github.com/sandroidmusic/obs-2nd-Screen/blob/main/src/objects/Constants.ts) reference.<br/>**Available values:** currently only `Components.ToggleButton` is available |
-| `action`             | A valid [action reference](https://github.com/sandroidmusic/obs-2nd-Screen/blob/main/src/objects/Constants.ts).<br/> **Available values:**<br /> - `Actions.SceneChange` - changes the active OBS scene<br /> - `Actions.AudioToggleMute` - Mutes/Unmutes an Audio Input Source |
-| `radiogroup`         | A string that defines if buttons are grouped together. Only one button can be active within a radiogroup at a time.<br/> **Scenes should aways be in a radiogroup**. |
-| `value`              | This is either the **exact** name of your OBS Scene or of your OBS Audio Input Source |
-| `image` *(optional)* | Can be a URL or a Base64 String of an [Image](https://base64.guru/converter/encode/image) or a [SVG](https://base64.guru/converter/encode/image/svg). |
-| `color` *(optional)* | A HEX Color value to color the button. Here's [a random color](https://hue.tools/info?format=hex) for you. |
-| `label` *(optional)* | A string that will be used a label displayed on the button.  |
+| Property                       | Description                                                  |
+| ------------------------------ | ------------------------------------------------------------ |
+| `type`                         | A valid [UI component](https://github.com/sandroidmusic/obs-2nd-Screen/blob/main/src/objects/Constants.ts) reference. <br/>**Available values:** currently only `Components.ToggleButton` is available |
+| `action`                       | A valid [action reference](https://github.com/sandroidmusic/obs-2nd-Screen/blob/main/src/objects/Constants.ts). <br/> **Available values:** <br/> - `Actions.SceneChange` - changes the active OBS scene <br/> - `Actions.AudioToggleMute` - Mutes/Unmutes an Audio Input Source |
+| `value`                        | This is either the **exact** name of your OBS Scene or of your OBS Audio Input Source |
+| `radiogroup` *(semi-optional)* | A string that defines which buttons are grouped together. <br/>Once buttons are grouped, only one button will be active within a radiogroup at a time. <br/> ⚠️ **Radiogroups are mandatory for Scenes.** |
+| `image` *(optional)*           | Can be a URL or a Base64 String of an [Image](https://base64.guru/converter/encode/image) or a [SVG](https://base64.guru/converter/encode/image/svg). |
+| `color` *(optional)*           | A HEX Color value to color the button. Here's [a random color](https://hue.tools/info?format=hex) for you. |
+| `label` *(optional)*           | A string that will be used a label displayed on the button.  |
 
 
 
