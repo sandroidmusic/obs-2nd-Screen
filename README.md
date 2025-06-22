@@ -97,7 +97,7 @@ A single Action or Button includes the following properties:
 | `radiogroup` *(semi-optional)* | A string that defines which buttons are grouped together. <br/>Once buttons are grouped, only one button will be active within a radiogroup at a time. <br/> ⚠️ **Radiogroups are mandatory for Scenes.** |
 | `image` *(optional)*           | Can be a URL or a Base64 String of an [Image](https://base64.guru/converter/encode/image) or a [SVG](https://base64.guru/converter/encode/image/svg). |
 | `color` *(optional)*           | A HEX Color value to color the button. Here's [a random color](https://hue.tools/info?format=hex) for you. |
-| `label` *(optional)*           | A string that will be used a label displayed on the button.  |
+| `label` *(optional)*           | A string that will be used as a label displayed on the button.  |
 
 
 
