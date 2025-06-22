@@ -87,17 +87,15 @@ Actions are defined as a Array of Objects [JSON structure](https://developer.moz
 
 A single Action or Button includes the following properties:
 
-* `type` - a valid UI component reference.
-  Available options:
-  * Currently only `Components.ToggleButton` is available
-* `action` - a valid action reference.
-  Available options:
-  * `Actions.SceneChange` - changes the active OBS scene
-  * `Actions.AudioToggleMute` - Mutes/Unmutes an Audio Input Source
-* `value` - This is either the **exact** name of your Scene or of your Audio Input Source
-* `image` - (optional) can be a URL or a Base64 String of an [Image](https://base64.guru/converter/encode/image) or a [SVG](https://base64.guru/converter/encode/image/svg). 
-* `color` - (optional) a HEX Color value to color the button. Here's [a random color](https://hue.tools/info?format=hex) for you.
-* `label` - (optional) a label text that should be displayed on the button.
+| Property             | Description                                                  |
+| -------------------- | ------------------------------------------------------------ |
+| `type`               | A valid [UI component](https://github.com/sandroidmusic/obs-2nd-Screen/blob/main/src/objects/Constants.ts) reference.<br/>**Available values:** currently only `Components.ToggleButton` is available |
+| `action`             | A valid [action reference](https://github.com/sandroidmusic/obs-2nd-Screen/blob/main/src/objects/Constants.ts).<br/> **Available values:**<br /> - `Actions.SceneChange` - changes the active OBS scene<br /> - `Actions.AudioToggleMute` - Mutes/Unmutes an Audio Input Source |
+| `radiogroup`         | A string that defines if buttons are grouped together. Only one button can be active within a radiogroup at a time.<br/> **Scenes should aways be in a radiogroup**. |
+| `value`              | This is either the **exact** name of your OBS Scene or of your OBS Audio Input Source |
+| `image` *(optional)* | Can be a URL or a Base64 String of an [Image](https://base64.guru/converter/encode/image) or a [SVG](https://base64.guru/converter/encode/image/svg). |
+| `color` *(optional)* | A HEX Color value to color the button. Here's [a random color](https://hue.tools/info?format=hex) for you. |
+| `label` *(optional)* | A string that will be used a label displayed on the button.  |
 
 
 
