@@ -42,9 +42,9 @@ Optimized for Tablets / Mobile but can also be used on your computer of course.
    1. If you want check the "Auto Start WebSocket Server" checkbox
    2. Take note of the `Address`and `Port` of this server. You will need it later.
    3. Press "Start Server"
-5. In order for the web-app to work, you must import the predefined actions [found here](#link).
+5. In order for the web-app to work, you must import the predefined actions [found here](https://github.com/sandroidmusic/obs-2nd-Screen/blob/main/streamerbot-actions).
    1. Press "Import"
-   2. Paste the [content of the file](#link) into "Import String"
+   2. Paste the [content of the file](https://github.com/sandroidmusic/obs-2nd-Screen/blob/main/streamerbot-actions) into "Import String"
    3. Press "Import"
 6. Continue setting up your Platforms (like Youtube) if haven't done so yet
 
