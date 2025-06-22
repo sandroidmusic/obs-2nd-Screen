@@ -1,3 +1,14 @@
+<script lang="ts">
+  import SVGLink from '@/assets/svgs/icon-link.svg';
+  import SVGInfo from '@/assets/svgs/icon-info.svg';
+
+  export default {
+    components: {
+      SVGLink,
+      SVGInfo,
+    },
+  };
+</script>
 <script setup lang="ts">
   //---------------------------------------------------
   //
@@ -126,10 +137,19 @@
         <div class="group">
           <div class="input url">
             <label>OBS Overlay URL:</label>
-            <a :href="overlayUrl" target="_blank">{{ overlayUrl }}</a>
+            <a :href="overlayUrl" target="_blank"
+              >{{ overlayUrl }} <span><SVGLink /></span
+            ></a>
           </div>
         </div>
-        <h3>Actions</h3>
+        <h3>
+          Actions
+          <a
+            href="https://github.com/sandroidmusic/obs-2nd-Screen/tree/main?tab=readme-ov-file#configuring-actions"
+            target="_blank"
+            ><SVGInfo
+          /></a>
+        </h3>
         <div class="group">
           <div class="input code-editor">
             <MonacoEditor v-model="actions" />
@@ -204,6 +224,16 @@
           padding-top: 0;
           border-top: 0;
         }
+
+        & > a {
+          & > svg {
+            top: 3px;
+            margin-left: 4px;
+            position: relative;
+            width: 16px;
+            height: 16px;
+          }
+        }
       }
 
       & > div.group {
@@ -223,13 +253,25 @@
             margin-bottom: 2px;
             color: rgb(from var(--color-text-primary) r g b / 70%);
           }
-          a {
-            font-size: 1.2rem;
-            display: inline-block;
-            text-decoration: none;
-            color: var(--color-accent);
-            padding: var(--baseunit);
-            text-shadow: 0 1px black;
+
+          &.url {
+            & > a {
+              font-size: 1.2rem;
+              display: inline-block;
+              text-decoration: none;
+              color: var(--color-accent);
+              padding: 0 var(--baseunit) var(--baseunit);
+              text-shadow: 0 1px black;
+              & > span {
+                margin: 0 4px;
+                & > svg {
+                  position: relative;
+                  top: 3px;
+                  width: 16px;
+                  height: 16px;
+                }
+              }
+            }
           }
 
           &.text {
