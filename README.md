@@ -27,8 +27,8 @@ Optimized for Tablets / Mobile but can also be used on your computer of course.
 
 
 > [!NOTE]
-> Since your Streamer.bot instance is most likely running locally in a insecure environment (no SSL),
-> the web-app **has to** run via `http` as well.
+> Since your Streamer.bot instance is most likely running locally (no SSL available),
+> the web-app **has to** run via `http` as well in order to communicate with your Streamer.bot instance.
 >
 > * No data is transmitted or collected by this web-app 
 > * All data is local and belongs to you ❤️
