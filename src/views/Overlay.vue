@@ -244,7 +244,7 @@
         word-wrap: break-word;
         word-break: break-word;
         height: 120px;
-        max-width: 40vw;
+        max-width: 45vw;
         max-height: 120px;
         width: auto;
         z-index: 2;
@@ -284,6 +284,8 @@
         }
 
         & > div {
+          position: relative;
+          top: 2px;
           width: 100%;
           max-height: inherit;
           display: -webkit-box;
@@ -299,13 +301,13 @@
             background-color: rgb(255, 255, 255, 0.65);
             color: black;
             font-weight: 600;
-            font-size: 2rem;
+            font-size: 2.4rem;
             margin-right: 12px;
           }
 
           & > span.content {
-            font-size: 2rem;
-            line-height: 1.6;
+            font-size: 2.4rem;
+            line-height: 1.4;
             & > img {
               width: 24px;
               height: 24px;

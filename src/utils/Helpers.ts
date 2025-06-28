@@ -38,32 +38,40 @@ export async function getBase64Image(imageUrl?: string) {
       return reject();
     }
 
-    if (imageCache[imageUrl]) {
-      resolve(imageCache[imageUrl]);
+    const url = imageUrl.replace(/=.*/, '=s256')
+    if (imageCache[url]) {
+      return resolve(imageCache[url]);
     }
 
     try {
-      const response = await fetch(imageUrl, { mode: 'cors' });
-      if (!response.ok) {
-        return reject();
-      }
-      const blob = await response.blob();
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        if (reader.result) {
-          imageCache[imageUrl] = reader.result;
-          resolve(reader.result);
+      for (let i = 0; i < 3; i += 1) {
+        const response = await fetch(url, { mode: 'cors' });
+        if (response.ok) {
+          await new Promise(async () => {
+            const blob = await response.blob();
+            const reader = new FileReader();
+            reader.onloadend = () => {
+              if (reader.result) {
+                imageCache[url] = reader.result;
+                resolve(reader.result);
+              } else {
+                reject();
+              }
+            };
+
+            reader.onerror = (error) => {
+              console.error('FileReader error:', error);
+              return reject();
+            };
+
+            reader.readAsDataURL(blob);
+          });
         } else {
-          reject();
+          await delay(1000);
+          console.warn('Profile image retrieval issue. Trying again..');
         }
-      };
-
-      reader.onerror = (error) => {
-        console.error('FileReader error:', error);
-        return reject();
-      };
-
-      reader.readAsDataURL(blob);
+      }
+      return reject();
     } catch (error: unknown) {
       console.error('Error in getBase64Image:', error);
       return reject();
